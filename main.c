@@ -1,10 +1,10 @@
 #include "main.h"
 
 /*
- * main -takes no arguments and returns an integer
+ * main - main function to run shell
  *
  *
- * Returns - 0
+ * Returns: int
  *
  */
 
@@ -47,7 +47,7 @@ int main(void)
 		else
 		{
 			wait(NULL);
-		}		
+		}
 	}
 	return (EXIT_SUCCESS);
 }

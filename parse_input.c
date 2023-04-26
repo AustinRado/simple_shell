@@ -1,5 +1,13 @@
 #include "main.h"
 
+/*
+ * parse_input - parses input string into an array of arguments
+ * @input: input string
+ * @args: array of arguments
+ *
+ * Return: void
+ */
+
 void  parse_input(char *input, char **args)
 {
 	int argc = 0;
@@ -14,3 +22,4 @@ void  parse_input(char *input, char **args)
 
 	args[argc] = NULL;
 }
+

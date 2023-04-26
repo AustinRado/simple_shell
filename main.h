@@ -12,6 +12,10 @@
 #define MAX_LENGTH_OF_INPUT 1024
 
 void  parse_input(char *input, char **args);
+void execute_command(char **args);
+void parse_input(char *input, char **args);
+char *read_input(void);
+
 /*size_t my_getline(char **lineptr, size_t *n, FILE *stream);*/
 
 #endif /* MAIN.H */
