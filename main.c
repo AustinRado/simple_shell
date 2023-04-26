@@ -16,7 +16,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ ");
+		printf("#cisfun$ ");
 		fgets(input, MAX_LENGTH_OF_INPUT, stdin);
 		if (feof(stdin))
 		{
