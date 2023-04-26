@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
-
-#define MAX_LENGTH_OF_INPUT 1024
+#include "main.h"
 
 /*
  * main -takes no arguments and returns an integer
@@ -13,14 +7,12 @@
  * Returns - 0
  *
  */
-int parse_input(char *input, char **args);
 
 int main(void)
 {
 	char input[MAX_LENGTH_OF_INPUT];
 	char *args[MAX_LENGTH_OF_INPUT / 2 + 1];
 	pid_t pid;
-	int arg;
 
 	while (1)
 	{
@@ -32,9 +24,9 @@ int main(void)
 			exit(EXIT_SUCCESS);
 		}
 		input[strcspn(input, "\n")] = '\0';
-		arg = parse_input(input, args);
+		parse_input(input, args);
 
-		if (arg == 0)
+		if (args[0] == NULL)
 		{
 			continue;
 		}
@@ -47,33 +39,15 @@ int main(void)
 				exit(EXIT_FAILURE);
 			}
 		} else if
-			(pid > 0)
+			(pid < 0)
 			{
 				perror("fork");
 				exit(EXIT_FAILURE);
 			}
+		else
+		{
+			wait(NULL);
+		}		
 	}
 	return (EXIT_SUCCESS);
-}
-
-/*
- * parse_input - called to parse the user input and store in the args array
- *
- *
- */
-
-int parse_input(char *input, char **args)
-{
-	int argc = 0;
-	char *delim = " \t\r\n";
-	char *token = strtok(input, delim);
-
-	while (token != NULL)
-
-	{
-		args[argc++] = token;
-		token = strtok(NULL, delim);
-	}
-	args[argc] = NULL;
-	return (argc);
 }

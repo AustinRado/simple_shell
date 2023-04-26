@@ -1,17 +1,16 @@
-#include <string.h>
+#include "main.h"
 
-void parse_input(char *input, char **args)
+void  parse_input(char *input, char **args)
 {
-	const char delim[] = " ";
-	char *word = strtok(input, delim);
-	int i = 0;
+	int argc = 0;
+	char *delim = " \t\r\n";
+	char *token = strtok(input, delim);
 
-	while (word != NULL)
+	while (token != NULL)
 	{
-		args[i] = word;
-		i++;
-		word = strtok(NULL, delim);
+		args[argc++] = token;
+		token = strtok(NULL, delim);
 	}
 
-	args[i] = NULL;
+	args[argc] = NULL;
 }
