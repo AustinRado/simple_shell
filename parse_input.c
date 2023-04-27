@@ -8,16 +8,29 @@
  * Return: void
  */
 
+#define MAX_ARGS 20
+#define ARG_LEN 50
+
 void  parse_input(char *input, char **args)
 {
-	char* token;
 	int i = 0;
 
-	token = strtok(input, " \n");
-	while (token != NULL)
+	char* token;
+	size_t input_len = strlen(input);
+
+	if (input_len > 0 && input[input_len - 1] == '\n')
 	{
-		args[i++] = token;
-		token = strtok(NULL, " \n");
+		input[input_len - 1] = '\0';
+		input_len--;
+	}
+
+	token = strtok(input, " ");
+	while (token != NULL && i < MAX_ARGS - 1)
+	{
+		strncpy(args[i], token, ARG_LEN);
+		args[i][ARG_LEN - 1] = '\0';
+		i++;
+		token = strtok(NULL, " ");
 	}
 	args[i] = NULL;
 }
