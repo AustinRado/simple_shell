@@ -10,16 +10,14 @@
 
 void  parse_input(char *input, char **args)
 {
-	int argc = 0;
-	char *delim = " \t\r\n";
-	char *token = strtok(input, delim);
+	char* token;
+	int i = 0;
 
+	token = strtok(input, " \n");
 	while (token != NULL)
 	{
-		args[argc++] = token;
-		token = strtok(NULL, delim);
+		args[i++] = token;
+		token = strtok(NULL, " \n");
 	}
-
-	args[argc] = NULL;
+	args[i] = NULL;
 }
-
