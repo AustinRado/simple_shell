@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define MAX_INPUT_SIZE 1024 
+#define MAX_INPUT_SIZE 1024
 
 /**
  * display_prompt - a function that prints the prompt to the user
@@ -24,17 +24,16 @@ fflush(stdout);
 */
 int main(void)
 {
-    char input[MAX_INPUT_SIZE]; 
+char input[MAX_INPUT_SIZE];
 
-    display_prompt();
+display_prompt();
 
-    while (fgets(input, sizeof(input), stdin))
-    {
-       
-        printf( "%s", input);
+while (fgets(input, sizeof(input), stdin))
+{
+printf("%s", input);
 
-        display_prompt();
-    }
+display_prompt();
+}
 
-    return (0);
+return (0);
 }
