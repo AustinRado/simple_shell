@@ -14,12 +14,12 @@ if (args[1] == NULL)
 const char *home_dir = getenv("HOME");
 if (home_dir == NULL)
 {
-perror("cd");
+print_chdir_error("cd");
 return (1);
 }
 if (chdir(home_dir) != 0)
 {
-perror("cd");
+print_chdir_error("cd");
 return (1);
 }
 }
@@ -27,7 +27,7 @@ else
 {
 if (chdir(args[1]) != 0)
 {
-perror("cd");
+print_chdir_error("cd");
 return (1);
 }
 }
