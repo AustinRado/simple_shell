@@ -3,23 +3,6 @@
 #define MAX_INPUT_SIZE 1024
 #define MAX_ARGS 64
 
-
-/**
- * display_prompt - a function that prints the prompt to the user
- * Return void
-*/
-void display_prompt(void)
-{
-if (isatty(STDIN_FILENO))
-{
-{
-printf("cisfun$ ");
-fflush(stdout);
-}
-}
-}
-
-
 /**
  * main - function executes simple shell
  * Return: 0
