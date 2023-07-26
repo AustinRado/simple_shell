@@ -42,5 +42,5 @@ return (0);
 */
 int exit_builtin(void)
 {
-return (0);
+exit(0);
 }
