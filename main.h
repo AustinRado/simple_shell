@@ -8,5 +8,7 @@
 
 
 void display_prompt(void);
+int cd_builtin(char **args);
+int exit_builtin(void);
 
 #endif
