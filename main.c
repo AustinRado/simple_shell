@@ -27,7 +27,6 @@ fflush(stdout);
 int main(void)
 {
 char input[MAX_INPUT_SIZE];
-int i = 0;
 char *token;
 char *args[MAX_ARGS];
 int arg_count = 0;
@@ -57,11 +56,7 @@ break;
 }
 else
 {
-while (i < arg_count)
-{
-printf("Argument %d: %s\n", i, args[i]);
-i++;
-}
+execute_external_command(args);
 }
 display_prompt();
 }
