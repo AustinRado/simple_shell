@@ -8,8 +8,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-
-
 void display_prompt(void);
 int cd_builtin(char **args);
 int exit_builtin(void);
